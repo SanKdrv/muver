@@ -1,0 +1,74 @@
+<div class="pocket-music-card">
+  <div class="pocket-music-card__index">
+    1
+  </div>
+  <div class="pocket-music-card__metadata">
+    <div class="pocket-music-card__overflowable-column">
+      <div class="pocket-music-card__overflowable-wrapper deco-typo-secondary">
+        <div class="pocket-music-card__name">
+          <a class="pocket-music-card__link" href="#" title="Myron">
+            <strong>
+              Myron
+            </strong>
+          </a>
+        </div>
+        <div class="pocket-music-card__meta">
+          <span class="pocket-music-card__spacer">&nbsp;—&nbsp;</span>
+          <span class="pocket-music-card__artists">
+            <a href="#" title="Lil Uzi Vert" class="pocket-music-card__deco-link">
+              Lil Uzi Vert adsdadsads
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <div class="pocket-music-card__end-column">
+        <span class="d-explicit-mark d-explicit-mark--e " title="Сервис Muver&nbsp;Музыка может содержать информацию, не&nbsp;предназначенную для&nbsp;несовершеннолетних">
+          <svg class="parental-advisory-explicit" id="Layer_1" width="11" height="11" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path id="E" d="m217 126.5v105.5h120v44h-120v109.5h135v44.5h-192v-348h192v44.5z"></path></svg>
+        </span>
+        <div class="pocket-music-card__track-actions">
+          <button class="deco-button-delete" title="Удалить трек" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-trash" viewBox="0 0 16 16">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+            </svg>
+          </button>
+          <button class="deco-button-like" title="Добавить в коллекцию" type="button">
+            <svg width="26px" height="26px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#999">
+              <path d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="deco-button-block" title="Нажмите, и мы больше не будем запускать этот трек" type="button">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="#999" xmlns="http://www.w3.org/2000/svg" stroke="#999">
+              <path d="M5.75 5.75L18.25 18.25M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="deco-button-more" title="Добавить в коллекцию" type="button">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="7" cy="12" r="1" stroke="#999" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="14" cy="12" r="1" stroke="#999" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="21" cy="12" r="1" stroke="#999" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="pocket-music-card__context-menu"></div>
+        <div class="pocket-music-card__track-info">
+          <span class="pocket-music-card__time deco-typo-secondary">3:44</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const mainContent = document.querySelector('.pocket-music-card__overflowable-wrapper');
+  const additionalInfo = document.querySelector('.pocket-music-card__end-column');
+
+  mainContent.addEventListener('mouseover', () => {
+    additionalInfo.style.display = 'block';
+  });
+
+  mainContent.addEventListener('mouseout', () => {
+    additionalInfo.style.display = 'none';
+  });
+</script>

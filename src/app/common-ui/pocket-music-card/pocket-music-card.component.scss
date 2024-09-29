@@ -1,0 +1,164 @@
+.pocket-music-card {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  display: grid;
+  grid-template-columns: 40px 260px;
+  white-space: nowrap;
+  grid-gap: 0;
+  padding-top: 2px;
+  align-items: center;
+  width: 300px;
+  height: 32px;
+}
+
+.pocket-music-card__metadata {
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pocket-music-card__deco-link {
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+.pocket-music-card__link {
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+.pocket-music-card__overflowable-column {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pocket-music-card__overflowable-wrapper {
+  width: 170px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pocket-music-card__end-column {
+  position: relative;
+  //top: 100%;
+  //left: 0;
+  padding: 0;
+
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pocket-music-card__end-column.show {
+  display: block;
+}
+
+.pocket-music-card__index {
+  text-align: center;
+}
+
+.pocket-music-card__meta {
+  text-overflow: ellipsis;
+}
+
+.deco-typo-secondary, .pocket-music-card__deco-link, .pocket-music-card__index {
+  color: var(--light-secondary-color);
+}
+
+.svg {
+  pointer-events: none;
+  user-select: none;
+}
+
+.deco-button-delete svg {
+  fill: var(--grey-color);
+}
+
+.deco-button-delete {
+  //padding-top: 4px !important;
+}
+
+.deco-button-like, .deco-button-block, .deco-button-more, .deco-button-delete {
+  //padding-top: 4px !important;
+  background: transparent;
+  border: none;
+}
+
+.deco-button-block svg {
+  fill: var(--dark-color);
+  stroke: var(--grey-color);
+}
+
+.deco-button-like svg {
+  fill: var(--dark-color);
+  stroke: var(--grey-color);
+}
+
+.deco-button-more svg {
+  fill: var(--grey-color);
+}
+
+.deco-button-more:hover svg{
+  cursor: pointer;
+  circle {
+    stroke: var(--service-color);
+  }
+}
+
+.deco-button-like:hover svg {
+  stroke: var(--service-color);
+  cursor: pointer;
+}
+
+.deco-button-block:hover svg {
+  stroke: var(--service-color);
+  cursor: pointer;
+}
+
+.deco-button-delete:hover svg {
+  fill: var(--service-color);
+  cursor: pointer;
+}
+
+.d-explicit-mark {
+  margin-right: 20px;
+  padding-top: 1px;
+}
+
+.pocket-music-card__track-actions {
+  visibility: hidden;
+  display: none;
+  grid-template-columns: 30px 30px 30px 40px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.pocket-music-card:hover .pocket-music-card__track-actions{
+  opacity: 1;
+  visibility: visible;
+  display: grid;
+}
+
+.pocket-music-card:hover .pocket-music-card__track-info{
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.parental-advisory-explicit {
+  fill: #EEEEEE;
+  background-color: var(--dark-secondary-color);
+}
+
+
