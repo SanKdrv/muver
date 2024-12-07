@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Music} from "../../interfaces/music";
+import {MusicPlayerService} from "../../services/music-player.service";
 
 @Component({
   selector: 'app-pocket-music-card',
@@ -11,4 +12,9 @@ import {Music} from "../../interfaces/music";
 export class PocketMusicCardComponent {
   @Input() song!: Music;
 
+  constructor(private musicPlayerService: MusicPlayerService) {}
+
+  playSong() {
+    this.musicPlayerService.playTrack(this.song);
+  }
 }

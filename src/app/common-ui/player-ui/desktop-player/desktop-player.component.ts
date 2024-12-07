@@ -10,6 +10,7 @@ import {Music} from "../../../interfaces/music";
 import {AudioSliderComponent} from "../audio-slider/audio-slider.component";
 import {MatLine} from "@angular/material/core";
 import {MainPageComponent} from "../../../pages/main-page/main-page.component";
+import {MusicPlayerService} from "../../../services/music-player.service";
 
 @Component({
   selector: 'app-desktop-player',
@@ -29,15 +30,15 @@ export class DesktopPlayerComponent {
   audio = new Audio();
   trackPointer = 0;
   // musicList: Music[] = [];
-  musicList: Music[] = [
-    {
-      album: "DBR",
-      title: "Gods Country",
-      artist: "Travis Scott",
-      url: "/assets/music/Travis_Scott_-_GODS_COUNTRY.mp3"
-      // url: "D:\\web-proj\\muver\\public\\assets\\music\\Travis_Scott_-_GODS_COUNTRY.mp3"
-    },
-  ];
+  // musicList: Music[] = [
+  //   {
+  //     album: "DBR",
+  //     title: "Gods Country",
+  //     artist: "Travis Scott",
+  //     url: "/assets/music/Travis_Scott_-_GODS_COUNTRY.mp3"
+  //     // url: "D:\\web-proj\\muver\\public\\assets\\music\\Travis_Scott_-_GODS_COUNTRY.mp3"
+  //   },
+  // ];
   previous_volume = 50 / 100;
   currentMusic = {
     album: "",
@@ -57,6 +58,12 @@ export class DesktopPlayerComponent {
     // Устанавливаем обработчики событий
     this.audio.addEventListener('loadedmetadata', this.onMetadataLoaded.bind(this));
     this.audio.addEventListener('timeupdate', this.onTimeUpdate.bind(this));
+    this.musicPlayerService.currentTrack$.subscribe(track => {
+      this.currentTrack = track;
+      if (track) {
+        this.playTrack(track);
+      }
+    });
   }
 
   onMetadataLoaded(event: Event) {
@@ -82,29 +89,49 @@ export class DesktopPlayerComponent {
     return `${minutes}:${formattedSeconds}`;
   }
 
-  play(index?: number) {
-    // console.log(this.musicList[0] ? this.musicList[0] : 'Ничего');
-    if (index === undefined) {
-      if (this.audio.paused) {
-        if (this.audio.readyState === 0) {
-          this.trackPointer = 0;
-          this.currentMusic = this.musicList[0];
-          this.audio.src = this.currentMusic.url;
-        }
-        // this.audio.load();
-        this.audio.play();
-        // console.log(`Попытка воспроизвести трек ${this.currentMusic.title}`);
+  // play(index?: number) {
+  //   // console.log(this.musicList[0] ? this.musicList[0] : 'Ничего');
+  //   if (index === undefined) {
+  //     if (this.audio.paused) {
+  //       if (this.audio.readyState === 0) {
+  //         this.trackPointer = 0;
+  //         this.currentMusic = this.musicList[0];
+  //         this.audio.src = this.currentMusic.url;
+  //       }
+  //       // this.audio.load();
+  //       this.audio.play();
+  //       // console.log(`Попытка воспроизвести трек ${this.currentMusic.title}`);
+  //
+  //     } else {
+  //       this.audio.pause();
+  //     }
+  //   } else {
+  //     this.trackPointer = index;
+  //     this.currentMusic = this.musicList[index];
+  //     this.audio.src = this.currentMusic.url;
+  //     this.audio.play();
+  //   }
+  // }
+  currentTrack: Music | null = null;
+  constructor(private musicPlayerService: MusicPlayerService) {}
 
-      } else {
-        this.audio.pause();
-      }
-    } else {
-      this.trackPointer = index;
-      this.currentMusic = this.musicList[index];
-      this.audio.src = this.currentMusic.url;
+  playTrack(track: Music) {
+    this.currentMusic = track;
+    // this.audio = track;
+
+    this.audio.src = track.url;
+    this.audio.load();
+    this.audio.play();
+  }
+
+  togglePlay() {
+    if (this.audio.paused) {
       this.audio.play();
+    } else {
+      this.audio.pause();
     }
   }
+
   volumeSlider(event: any) {
     this.audio.volume = event.target.value / 100;
   }
