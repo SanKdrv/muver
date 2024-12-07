@@ -1,0 +1,6 @@
+
+<app-playlist [playlist]="currentPlaylist"></app-playlist>
+
+<button *ngFor="let playlist of playlists; let i = index" (click)="changePlaylist(i)">
+  Playlist {{ i + 1 }}
+</button>

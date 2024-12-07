@@ -1,0 +1,35 @@
+<div class="form-container">
+  <form
+    class="login-form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
+    <h1 class="h1 mb64">Вход</h1>
+
+    <label class="muver-control-label mb16">
+      Логин
+      <input
+        formControlName="username"
+        class="muver-input" type="text" placeholder="Введите логин">
+    </label>
+
+    <label class="muver-control-label mb32">
+      Пароль
+      <input
+        formControlName="password"
+        class="muver-input" type="text" placeholder="Введите пароль">
+    </label>
+
+      <button class="btn btn-shadow mb16" type="submit">Войти</button>
+  </form>
+
+  <div class="non-reg">
+    <a href="/register">
+      <button class="btn btn-shadow">
+          Зарегистрироваться
+      </button>
+    </a>
+  </div>
+</div>
+
+<img src="/assets/svg/logo-big.svg" alt="logo" class="logo-big">

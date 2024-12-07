@@ -1,0 +1,29 @@
+.ap-timeline{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 12px;
+  //border-radius: 15px;
+  background: var(--grey-color);
+  //margin: 0 10px;
+
+  .ap-handle {
+    background: var(--service-color);
+    height: 12px;
+  }
+
+  .ap-handle-head {
+    width: 0;
+    height: 12px;
+    //border-radius: 50%;
+    //background: #343131;
+    background: var(--service-color);
+    opacity: 1!important;
+    //transform: scale(0.25);
+  }
+
+}
+.ap-timeline:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,27 @@
+.desktop-player__body {
+  position: fixed;
+  //bottom: 0;
+  //left: 0;
+  //right: 0;
+  height: 60px;
+  background-color: var(--dark-color);
+  opacity: 0.5;
+}
+
+.logo {
+  padding-left: 30px;
+}
+
+.nav-bar__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  grid-gap: 20px;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+.navigation-links {
+  display: grid;
+  grid-template-columns: auto auto;
+  //grid-gap: 20px;
+}

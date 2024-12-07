@@ -1,0 +1,62 @@
+<div class="desktop-player__body">
+  <app-audio-slider [duration]="audio.duration" [currentTime]="audio.currentTime" [audio]="audio"></app-audio-slider>
+  <div class="player-main">
+    <div class="navigation">
+      <div class="start-block">
+        <mat-toolbar>
+          <button mat-icon-button>
+            <mat-icon>skip_previous</mat-icon>
+          </button>
+          <button mat-icon-button (click)="play()">
+            <mat-icon>{{ audio.paused ? 'play_arrow' : 'pause' }}</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>skip_next</mat-icon>
+          </button>
+          <span style="font-size: 18px;">
+            {{ formatTime(audio.currentTime) ?? '0:00' }}&nbsp;/&nbsp;{{ audio.duration ? formatTime(audio.duration) : '0:00' }}
+          </span>
+        </mat-toolbar>
+      </div>
+      <div class="mid-block">
+        <div class="mid-img">
+<!--          {{ audio }}-->
+          <img src="/assets/images/Travis.jpg" width="52" height="52" alt="Обложка">
+        </div>
+        <div style="display: flex; flex-direction: row">
+          <div class="tags">
+            <div class="name">
+            <span mat-line class="name-text">
+              {{ currentMusic.title }}
+            </span>
+            </div>
+            <div class="author">
+            <span mat-line class="author-text">
+              {{ currentMusic.artist }}
+            </span>
+            </div>
+          </div>
+          <span class="d-explicit-mark d-explicit-mark--e " title="Сервис Muver&nbsp;Музыка может содержать информацию, не&nbsp;предназначенную для&nbsp;несовершеннолетних">
+            <svg class="parental-advisory-explicit" id="Layer_1" width="11" height="11" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path id="E" d="m217 126.5v105.5h120v44h-120v109.5h135v44.5h-192v-348h192v44.5z"></path></svg>
+          </span>
+        </div>
+      </div>
+      <div class="end-block">
+        <mat-toolbar>
+          <button mat-icon-button (click)="turn_volume_off()">
+            <mat-icon>{{ audio.volume !== 0 ? 'volume_up' : 'volume_off'}}</mat-icon>
+          </button>
+          <mat-slider
+            class="audio-slider"
+            color="primary"
+            step="1"
+            min="0" max="100"
+            (input)="volumeSlider($event)"
+          >
+            <input matSliderThumb value="{{ audio.volume * 100 }}">
+          </mat-slider>
+        </mat-toolbar>
+      </div>
+    </div>
+  </div>
+</div>

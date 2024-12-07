@@ -1,0 +1,16 @@
+<div class="playlist" style=" overflow-y: scroll; float:right; border-left: 1px solid; height: 85%; padding-left: 5px;">
+  <br>
+  <div>
+    Плейлист
+  </div>
+  <div class="h2">
+    Мне нравится
+  </div>
+  <div>
+    Автор: вы
+  </div>
+
+  <div>
+    <app-pocket-music-card *ngFor="let song of playlist" [song]="song"></app-pocket-music-card>
+  </div>
+</div>
