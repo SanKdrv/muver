@@ -54,7 +54,7 @@ export class DesktopPlayerComponent {
   ngOnInit() {
     // Создаем объект Audio
     this.audio = new Audio('path/to/audio/file.mp3');
-
+    this.audio.volume = this.previous_volume;
     // Устанавливаем обработчики событий
     this.audio.addEventListener('loadedmetadata', this.onMetadataLoaded.bind(this));
     this.audio.addEventListener('timeupdate', this.onTimeUpdate.bind(this));
