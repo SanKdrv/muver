@@ -1,3 +1,7 @@
+//@import "fonts";
+@import "margins";
+
+
 :root {
   --dark-color: #343131;
   --dark-secondary-color: #474343;
@@ -6,16 +10,109 @@
   --light-secondary-color: #E6E0B7;
   --service-color: #D8A25E;
   --grey-color: #999;
-
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: var(--dark-color);
   color: var(--light-color);
+
+  min-height: 100%;
+  min-width: 100%;
+  overflow: visible !important;
 }
+
+.h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 800;
+  color: var(--service-color);
+}
+
+.h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 800;
+  color: var(--service-color);
+}
+
+.btn {
+  width: 100%;
+  border: 1px solid var(--dark-secondary-color);
+  border-radius: 4px;
+  background: var(--service-color);
+  color: var(--dark-color);
+
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  cursor: pointer;
+  height: 48px;
+  //padding: 10px;
+}
+
+.btn-shadow {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: -4px;
+    right: -4px;
+    background: var(--light-color);
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    //border: 1px solid var(--dark-secondary-color);
+  }
+}
+
+.muver-control-label {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  display: block;
+}
+
+.muver-input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  border: 1px solid var(--light-color);
+  border-radius: 4px;
+
+  padding: 12px 20px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+
+  height: 48px;
+  background: var(--dark-secondary-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--light-color);
+}
+
+.deco-button-find {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.deco-button-find:hover svg {
+  fill: var(--service-color);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

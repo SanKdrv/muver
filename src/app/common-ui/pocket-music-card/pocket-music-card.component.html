@@ -1,22 +1,33 @@
 <div class="pocket-music-card">
-  <div class="pocket-music-card__index">
-    1
+  <div class="pocket-music-card__start-column">
+    <div class="pocket-music-card__index">
+      1
+    </div>
+    <div class="pocket-music-card__play-bubble">
+      <div class="circle-container">
+        <button class="deco-button-play">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
   <div class="pocket-music-card__metadata">
     <div class="pocket-music-card__overflowable-column">
       <div class="pocket-music-card__overflowable-wrapper deco-typo-secondary">
         <div class="pocket-music-card__name">
-          <a class="pocket-music-card__link" href="#" title="Myron">
+          <a class="pocket-music-card__link" href="#" title="{{ song.title }}">
             <strong>
-              Myron
+              {{ song.title }}
             </strong>
           </a>
         </div>
         <div class="pocket-music-card__meta">
           <span class="pocket-music-card__spacer">&nbsp;—&nbsp;</span>
           <span class="pocket-music-card__artists">
-            <a href="#" title="Lil Uzi Vert" class="pocket-music-card__deco-link">
-              Lil Uzi Vert adsdadsads
+            <a href="#" title="{{ song.artist }}" class="pocket-music-card__deco-link">
+              {{ song.artist }}
             </a>
           </span>
         </div>
@@ -59,16 +70,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  const mainContent = document.querySelector('.pocket-music-card__overflowable-wrapper');
-  const additionalInfo = document.querySelector('.pocket-music-card__end-column');
-
-  mainContent.addEventListener('mouseover', () => {
-    additionalInfo.style.display = 'block';
-  });
-
-  mainContent.addEventListener('mouseout', () => {
-    additionalInfo.style.display = 'none';
-  });
-</script>

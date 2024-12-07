@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Music} from "../../interfaces/music";
 
 @Component({
   selector: 'app-pocket-music-card',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './pocket-music-card.component.scss'
 })
 export class PocketMusicCardComponent {
+  @Input() song!: Music;
 
 }

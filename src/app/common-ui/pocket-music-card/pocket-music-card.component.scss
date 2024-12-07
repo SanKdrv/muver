@@ -9,7 +9,7 @@
   padding-top: 2px;
   align-items: center;
   width: 300px;
-  height: 32px;
+  height: 36px;
 }
 
 .pocket-music-card__metadata {
@@ -26,6 +26,7 @@
 .pocket-music-card__link {
   color: var(--light-color);
   text-decoration: none;
+  margin-right: 4px;
 }
 
 .pocket-music-card__overflowable-column {
@@ -38,7 +39,7 @@
 }
 
 .pocket-music-card__overflowable-wrapper {
-  width: 170px;
+  width: 177px;
   display: flex;
   flex-direction: row;
   margin-right: 20px;
@@ -50,10 +51,8 @@
 
 .pocket-music-card__end-column {
   position: relative;
-  //top: 100%;
-  //left: 0;
-  padding: 0;
-
+  //padding: 0;
+  //padding-top: 4px;
 
   display: flex;
   flex-direction: row;
@@ -66,6 +65,12 @@
 
 .pocket-music-card__index {
   text-align: center;
+  //display: block;
+}
+
+.pocket-music-card__play-bubble {
+  text-align: center;
+  display: none;
 }
 
 .pocket-music-card__meta {
@@ -85,14 +90,31 @@
   fill: var(--grey-color);
 }
 
+.deco-button-play svg {
+  position: relative;
+  padding-left: 2px;
+  padding-top: 3px;
+}
+
+.circle-container {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .deco-button-delete {
   //padding-top: 4px !important;
 }
 
-.deco-button-like, .deco-button-block, .deco-button-more, .deco-button-delete {
+.deco-button-like, .deco-button-block, .deco-button-more, .deco-button-delete, .deco-button-play {
   //padding-top: 4px !important;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .deco-button-block svg {
@@ -137,6 +159,7 @@
 }
 
 .pocket-music-card__track-actions {
+  padding-top: 5px;
   visibility: hidden;
   display: none;
   grid-template-columns: 30px 30px 30px 40px;
@@ -161,4 +184,16 @@
   background-color: var(--dark-secondary-color);
 }
 
+.pocket-music-card:hover .pocket-music-card__index{
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.pocket-music-card:hover .pocket-music-card__play-bubble{
+  display: block;
+  text-align: center;
+  padding-left: 4px;
+  position: relative;
+}
 
